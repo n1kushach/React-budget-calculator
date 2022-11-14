@@ -30,6 +30,11 @@ function App() {
     setTotal(total)
   }
 
+  const clearExpenses = () => {
+    setExpenses([]);
+    setTotal(0);
+  }
+
   return (
     <div className="App">
       <h1 style={{textAlign: "center", color: "white"}}>Budget Calculator</h1>
@@ -40,6 +45,7 @@ function App() {
             <ExpenseList expense={expense} handleDelete={handleDelete}/>
           );
         })}
+        {expenses.length == 0 ? "" : <button className="clear-expenses" onClick={clearExpenses}>Clear Expenses</button>}
           <div className="total-expense"><h2 className="total">Total - {total}$</h2></div>
           <button onClick={calculateTotal} className="calculate-btn">Calculate Total</button>
       </div>

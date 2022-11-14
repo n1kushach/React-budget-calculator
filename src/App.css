@@ -61,3 +61,8 @@
 .total {
   color: white;
 }
+
+.clear-expenses {
+  width: 50%;
+  margin: auto;
+}
